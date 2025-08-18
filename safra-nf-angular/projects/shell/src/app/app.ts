@@ -1,0 +1,35 @@
+import { Component, signal } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+@Component({
+  selector: 'app-shell-root',
+  imports: [
+    RouterOutlet, 
+    MatToolbarModule,
+    MatMenuModule,
+   MatIconModule,
+  MatSidenavModule],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
+})
+export class App {
+  protected readonly title = signal('shell');
+
+  constructor(private router: Router) {
+    
+  }
+
+  public openSchedules(){
+
+  }
+
+  openPeople(){
+
+    this.router.navigate(['/people-view'])
+  }
+}

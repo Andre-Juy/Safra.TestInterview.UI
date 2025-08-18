@@ -5,6 +5,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { PrimeNG } from 'primeng/config';
 
 @Component({
   selector: 'app-shell-root',
@@ -20,9 +21,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 export class App {
   protected readonly title = signal('shell');
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private primeng: PrimeNG) {
     
   }
+
+  ngOnInit() {
+        this.primeng.ripple.set(true);
+    }
 
   public openSchedules(){
 

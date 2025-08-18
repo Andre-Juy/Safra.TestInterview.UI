@@ -1,0 +1,23 @@
+.title-pags{
+  margin-bottom: 20px;
+}
+
+.row-btns{
+    width: 100%;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.row-btns .btb-cadastrar{
+    background: green;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: #fff;
+    transition: background 0.1s ease;
+}
+
+.row-btns .btb-cadastrar:hover{
+    background: rgb(2, 61, 2);
+}

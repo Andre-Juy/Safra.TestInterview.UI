@@ -6,7 +6,7 @@ module.exports = withNativeFederation({
 
   exposes: {
     './Component': './projects/people-view/src/app/pages/people-view-list/people-view-list.ts',
-    './ComponentB': './projects/shared/src/lib/components/modal=dialog-confirm/modal-dialog-confirm.component.ts'
+    './ComponentB': './projects/shared/src/lib/components/modal-dialog-confirm/modal-dialog-confirm.component.ts'
   },
 
   shared: {

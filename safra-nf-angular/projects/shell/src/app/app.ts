@@ -6,6 +6,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { PrimeNG } from 'primeng/config';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-shell-root',
@@ -14,13 +15,14 @@ import { PrimeNG } from 'primeng/config';
     MatToolbarModule,
     MatMenuModule,
    MatIconModule,
-  MatSidenavModule],
+  MatSidenavModule,
+CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   protected readonly title = signal('shell');
-
+  usuarioLogado = false;
   constructor(private router: Router, private primeng: PrimeNG) {
     
   }

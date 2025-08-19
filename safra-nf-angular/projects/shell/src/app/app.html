@@ -2,8 +2,8 @@
 <mat-toolbar>
   <mat-toolbar-row id="mat-toolbar-row-1">
         <span class="title-logo"><img src="safra.png"></span>
-        <span class="example-spacer"></span>
-        <button class="container-user" mat-button [matMenuTriggerFor]="menu">
+        <span *ngIf="usuarioLogado" class="example-spacer"></span>
+        <button *ngIf="usuarioLogado" class="container-user" mat-button [matMenuTriggerFor]="menu">
           <img src="user.png">
           <span>Administrador</span>
         </button>
@@ -15,7 +15,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container class="example-container">
-    <mat-sidenav opened mode="side">
+    <mat-sidenav *ngIf="usuarioLogado" opened mode="side">
       <div class="left-menu">
         <ul>
           <li><button (click)="openPeople()">
@@ -29,8 +29,11 @@
         </ul>
       </div>
     </mat-sidenav>
+
     <div class="container-body">
+
 <router-outlet></router-outlet>
+
     </div>
     
   </mat-sidenav-container>

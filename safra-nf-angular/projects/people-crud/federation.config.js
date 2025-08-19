@@ -7,7 +7,7 @@ module.exports = withNativeFederation({
   exposes: {
     './ComponentA': './projects/people-crud/src/app/pages/people-create/people-create.ts',
     './ComponentB': './projects/people-crud/src/app/pages/people-edit/people-edit.ts',
-    './ComponentC': './projects/shared/src/lib/components/modal=dialog-confirm/modal-dialog-message.component.ts'
+    './ComponentC': './projects/shared/src/lib/components/modal-dialog-confirm/modal-dialog-message.component.ts'
   },
 
   shared: {

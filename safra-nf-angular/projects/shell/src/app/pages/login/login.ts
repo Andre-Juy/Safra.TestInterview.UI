@@ -32,7 +32,7 @@ export class Login {
 
       if(res.result.success){
         this.auth.storeToken(res.result.result);
-      this.router.navigate(['/']);
+       window.location.href = "http://localhost:4200/";
       }else{
         alert("Usuário ou senha incorretos!")
       }

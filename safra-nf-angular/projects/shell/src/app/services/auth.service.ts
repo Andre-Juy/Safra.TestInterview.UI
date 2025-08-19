@@ -33,6 +33,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem(this.tokenKey);
-    this.router.navigate(['/login']);
+     window.location.href = "http://localhost:4200/";
   }
 }

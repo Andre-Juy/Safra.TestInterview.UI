@@ -65,3 +65,35 @@ mat-error{
   font-size: 11px;
   color: red !important;
 }
+
+.btn-action-list{
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-action-list:hover{
+  color: #545454;
+}
+
+.modal-confirm button{
+
+  border: none;
+  cursor: pointer;
+}
+
+.modal-confirm .btn-confirm-modal-confirm{
+  background: #04a904;
+  padding: 8px 20px;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.modal-confirm .btn-cancel-modal-confirm{
+  background: red;
+  padding: 8px 20px;
+    border-radius: 4px;
+    color: #ffffff;
+    margin-right: 10px;
+}

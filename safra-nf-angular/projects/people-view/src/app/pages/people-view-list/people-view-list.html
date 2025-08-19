@@ -23,9 +23,10 @@
                 <td>{{ people.name }}</td>
                 <td>{{ people.lastName }}</td>
                 <td>{{ people.email }}</td>
-                <td><button (click)="editPeople(people.id)">Editar</button></td>
-                <td><button (click)="deletePeople(people.id)">Deletar</button></td>
+                <td><button class="btn-action-list" (click)="editPeople(people.id)"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                <td><button class="btn-action-list" (click)="deletePeople(people.id)"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon></button></td>
             </tr>
         </ng-template>
     </p-table>
 </div>
+

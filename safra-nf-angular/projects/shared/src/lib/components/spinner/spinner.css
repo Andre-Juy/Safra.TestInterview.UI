@@ -1,0 +1,14 @@
+.container-spinner{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #00000091;
+    top: 0px;
+    left: 0px;}
+
+.container-spinner
+mat-spinner{
+    margin: 0 auto;
+    top: calc(50% - 50px);
+}

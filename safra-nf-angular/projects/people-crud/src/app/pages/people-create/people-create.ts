@@ -4,7 +4,7 @@ import { Subject, Subscription } from 'rxjs';
 import {MatInputModule} from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 
-import { BaseFormComponent, People, PeopleService } from '@mf-workspace/shared';
+import { BaseFormComponent, ModalDialogService, People, PeopleService } from '@mf-workspace/shared';
 import { Router } from '@angular/router';
 
 
@@ -22,7 +22,8 @@ export class PeopleCreate extends BaseFormComponent implements OnInit, OnDestroy
   constructor(
     private _fb: FormBuilder,
     private _servicePeople: PeopleService,
-    private router: Router
+    private router: Router,
+    private _modalDialogService: ModalDialogService
   ) 
   { super(); }
 
@@ -51,8 +52,14 @@ export class PeopleCreate extends BaseFormComponent implements OnInit, OnDestroy
     this.sub = this._servicePeople.post(people)
     .subscribe((res) => {
       
-       this.router.navigate(['/people']);
+      this.sub = this._modalDialogService.openMessage('Sucesso', 'Pessoa cadastrada com sucesso!')
+      .subscribe((res) => {
 
+        this.router.navigate(['/people']);
+
+
+      })
+       
     })
     
 

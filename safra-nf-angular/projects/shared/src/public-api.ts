@@ -6,3 +6,4 @@ export * from './lib/shared';
 export * from './lib/logger';
 export * from './lib/services/people.service';
 export * from './lib/models/people.model';
+export * from './lib/components/base-form.component'

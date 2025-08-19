@@ -18,10 +18,10 @@
 					"builder": "@angular-architects/native-federation:build",
 					"options": {
 						"styles": [
-							"projects/shell/src/custom-theme.scss",
 							"node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-							"node_modules/primeng/resources/primeng.min.css",
-							"node_modules/primeicons/primeicons.css"
+							
+							"node_modules/primeicons/primeicons.css",
+							"projects/shell/src/custom-theme.scss"
 						]
 					},
 					"configurations": {
@@ -63,8 +63,7 @@
 							}
 						],
 						"styles": [
-							"projects/shell/src/styles.scss",
-							"@angular/material/prebuilt-themes/azure-blue.css"
+							"projects/shell/src/styles.scss"
 						]
 					}
 				},
@@ -144,10 +143,7 @@
 					"builder": "@angular-architects/native-federation:build",
 					"options": {
 						"styles": [
-							"projects/people-view/src/custom-theme.scss",
-							"node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-							"node_modules/primeng/resources/primeng.min.css",
-							"node_modules/primeicons/primeicons.css"
+							"projects/people-view/src/custom-theme.scss"
 						]
 					},
 					"configurations": {

@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoggerService, People, PeopleService } from '@mf-workspace/shared';
 import { TableModule } from 'primeng/table';
+import { Subject, Subscription } from 'rxjs';
 
 interface Column {
     field: string;
@@ -15,13 +16,14 @@ interface Column {
   templateUrl: './people-view-list.html',
   styleUrl: './people-view-list.scss'
 })
-export class PeopleViewListComponent {
+export class PeopleViewListComponent implements OnInit, OnDestroy {
+  
+  private sub!: Subscription;
   
   peoples!: People[];
   cols!: Column[];
 
   constructor(
-    private serv: LoggerService, 
     private peopleService: PeopleService,
     private router: Router) {
    
@@ -31,7 +33,7 @@ export class PeopleViewListComponent {
 
   ngOnInit() {
         
-    this.peopleService.getList().subscribe((res: People[]) => {
+    this.sub = this.peopleService.getList().subscribe((res: People[]) => {
 
           this.peoples = res
 
@@ -39,9 +41,9 @@ export class PeopleViewListComponent {
 
 
     this.cols = [
-            { field: 'Id', header: 'Id' },
-            { field: 'name', header: 'Name' },
-            { field: 'lastName', header: 'LastName' },
+            { field: 'id', header: 'id' },
+            { field: 'name', header: 'Nome' },
+            { field: 'lastName', header: 'Sobrenome' },
             { field: 'email', header: 'Email' }
         ];
       
@@ -50,5 +52,23 @@ export class PeopleViewListComponent {
   openCreatePeople(){
 
     this.router.navigate(['/people/create']);
+  }
+
+  deletePeople(id: string){
+    
+    console.log('id', id);
+    this.sub = 
+    this.peopleService.delete(id)
+    .subscribe((res) => {
+      console.log('deletado');
+    });
+  }
+
+  editPeople(id: string){
+    this.router.navigate(['people/edit', id]);
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }

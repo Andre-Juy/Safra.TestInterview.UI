@@ -5,7 +5,8 @@ module.exports = withNativeFederation({
   name: 'people-crud',
 
   exposes: {
-    './Component': './projects/people-crud/src/app/app.ts',
+    './ComponentA': './projects/people-crud/src/app/pages/people-create/people-create.ts',
+    './ComponentB': './projects/people-crud/src/app/pages/people-edit/people-edit.ts'
   },
 
   shared: {

@@ -4,3 +4,64 @@ body{
      height: 100%;
     font-family: Helvetica, sans-serif;
 }
+
+.row-form {
+  display: block;
+  width: 100%;
+}
+
+
+.container-form-field {
+  display: inline-block;
+}
+
+.container-form-field mat-form-field {
+  width: 100%;
+}
+
+.form-field-1 {
+  width: calc(25% - 10px);
+  margin-right: 10px;
+}
+
+.form-field-1-end {
+  width: 25%;
+}
+
+.form-field-2 {
+  width: calc(50% - 10px);
+  margin-right: 10px;
+}
+
+.form-field-2-end{
+   width: calc(50%);
+}
+
+.form-field-3 {
+  width: calc(75% - 10px);
+  margin-right: 10px;
+}
+
+.form-field-4 {
+  width: 100%;
+}
+
+input[type=submit] {
+  cursor: pointer;
+  border: none;
+  background: #04a904;
+  padding: 16px 20px;
+  color: #fff;
+  border-radius: 6px;
+  transition: background 0.1s ease;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background: #04c704;
+}
+
+mat-error{
+  font-size: 11px;
+  color: red !important;
+}

@@ -126,8 +126,8 @@ button, span{
 .left-menu{
     background: #fff;
     height: 88vh;
-    margin: 10px auto 0;
-    width: 90%;
+    margin: 20px 0 0 40px;
+    width: calc(90% - 40px);
     padding: 10px;
     border-radius: 6px;
 }
@@ -170,8 +170,8 @@ button, span{
 .container-body{
   background: #fff;
     height: 88vh;
-    margin: 10px auto 0;
-    width: 100%;
+    margin: 20px 30px 0 0;
+    width: calc(100% - 50px);
     padding: 10px;
     border-radius: 6px;
 }

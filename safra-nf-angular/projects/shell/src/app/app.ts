@@ -35,6 +35,6 @@ export class App {
 
   openPeople(){
 
-    this.router.navigate(['/people-view'])
+    this.router.navigate(['/people'])
   }
 }

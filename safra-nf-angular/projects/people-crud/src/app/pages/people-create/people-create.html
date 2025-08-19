@@ -1,0 +1,47 @@
+<div>
+  <h1>Cadastro de pessoa</h1>
+
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+    <div class="row-form">
+
+      <div class="container-form-field form-field-1">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input type="text" formControlName="name" matInput placeholder="Ex: Fernando">
+          <mat-error *ngIf="verificaValidTouched('name')">Informe o seu nome!</mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="container-form-field form-field-1">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Sobrenome</mat-label>
+          <input type="text" formControlName="lastName" matInput placeholder="Ex: Silva">
+          <mat-error *ngIf="verificaValidTouched('lastName')">Informe o seu sobrenome!</mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="container-form-field form-field-2-end">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="text" formControlName="email" matInput placeholder="Ex: fernado.silva@safra.com">
+          <mat-error *ngIf="verificaValidTouched('email')">Informe o seu email!</mat-error>
+        </mat-form-field>
+
+      </div>
+
+    </div>
+
+    <div class="row-form">
+      <input type="submit" value="Enviar" />
+    </div>
+
+    <div style="clear: both;"></div>
+
+  </form>
+</div>

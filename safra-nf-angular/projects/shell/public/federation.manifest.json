@@ -1,3 +1,4 @@
 {
-	"peopleView": "http://localhost:4201/remoteEntry.json"
+	"peopleView": "http://localhost:4201/remoteEntry.json",
+	"peopleCrud": "http://localhost:4202/remoteEntry.json"
 }

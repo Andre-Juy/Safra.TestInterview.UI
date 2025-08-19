@@ -6,20 +6,26 @@
         <button class="btb-cadastrar" (click)="openCreatePeople()">Cadastrar</button>
     </div>
 
-    <p-table [columns]="cols" [value]="peoples" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template #header let-columns>
-        <tr>
-            <th *ngFor="let col of columns">
-                {{ col.header }}
-            </th>
-        </tr>
-    </ng-template>
-    <ng-template #body let-rowData let-columns="columns">
-        <tr>
-            <td *ngFor="let col of columns">
-                {{ rowData[col.field] }}
-            </td>
-        </tr>
-    </ng-template>
-</p-table>
+    <p-table [value]="peoples" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template #header>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-people>
+            <tr>
+                <td>{{ people.id }}</td>
+                <td>{{ people.name }}</td>
+                <td>{{ people.lastName }}</td>
+                <td>{{ people.email }}</td>
+                <td><button (click)="editPeople(people.id)">Editar</button></td>
+                <td><button (click)="deletePeople(people.id)">Deletar</button></td>
+            </tr>
+        </ng-template>
+    </p-table>
 </div>

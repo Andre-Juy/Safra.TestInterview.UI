@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { PrimeNG } from 'primeng/config';
 import { CommonModule } from '@angular/common';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-shell-root',
@@ -23,20 +24,26 @@ CommonModule],
 export class App {
   protected readonly title = signal('shell');
   usuarioLogado = false;
-  constructor(private router: Router, private primeng: PrimeNG) {
+  constructor(
+    private router: Router, 
+    private primeng: PrimeNG,
+  private _authService: AuthService) {
     
   }
 
   ngOnInit() {
         this.primeng.ripple.set(true);
+        if(this._authService.isLoggedIn()){
+          this.usuarioLogado = true;
+        }
     }
-
-  public openSchedules(){
-
-  }
 
   openPeople(){
 
     this.router.navigate(['/people'])
+  }
+
+  logout(){
+    this._authService.logout();
   }
 }

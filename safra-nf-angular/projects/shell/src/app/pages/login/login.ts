@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ResponseModel } from '@mf-workspace/shared';
 
 @Component({
   selector: 'app-shell-login',
@@ -25,11 +26,18 @@ export class Login {
   }
 
   login() {
-    if (this.auth.login(this.username, this.password)) {
+    
+    this.auth.login(this.username, this.password)
+    .subscribe((res: ResponseModel) => {
+
+      if(res.result.success){
+        this.auth.storeToken(res.result.result);
       this.router.navigate(['/']);
-    } else {
-      alert('Login inválido');
-    }
+      }else{
+        alert("Usuário ou senha incorretos!")
+      }
+    })
+
   }
 
 }

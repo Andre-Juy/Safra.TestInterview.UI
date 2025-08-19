@@ -11,3 +11,5 @@ export * from './lib/components/spinner/spinner';
 export * from './lib/components/modal-dialog-confirm/modal-dialog-confirm.component';
 export * from './lib/components/modal-dialog-confirm/modal-dialog-message.component';
 export * from './lib/components/modal-dialog-confirm/modal-dialog.service';
+export * from './lib/environments/environment';
+export * from './lib/models/response.model';
